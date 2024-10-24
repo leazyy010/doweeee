@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.2)), 
+                              url(https://images.unsplash.com/photo-1503803548695-c2a7b4a5b875?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            overflow: hidden; /* Ensures no extra space */
+        }
+
+        /* Custom scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3); /* Scrollbar track background */
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.6); /* Scrollbar thumb color */
+            border-radius: 10px;
+            border: 2px solid rgba(0, 0, 0, 0.7); /* Add border to scrollbar thumb */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.8); /* Lighter color on hover */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+        }
+
+        /* Title style */
+        h1 {
+            margin: 0;
+            padding: 20px;
+            font-size: 2.5em;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for title */
+            letter-spacing: 2px; /* Add spacing between title letters */
+            max-width: 90%;
+        }
+
+        /* Centered content container */
+        .content {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1400px;
+            z-index: 1;
+            overflow-y: auto; /* Allow scrolling vertically */
+            max-height: 70vh; /* Limit the height to prevent overflow */
+            padding-bottom: 40px; /* Space for the button */
+        }
+
+        .image-container {
+            text-align: center;
+            max-width: 600px;
+            flex: 1;
+            margin: 20px;
+            transition: transform 0.4s ease-in-out; /* Smooth hover effect */
+        }
+
+        /* Hover effect for images */
+        .image-container:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px; /* Larger rounded corners */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.7); /* Deeper shadow for images */
+            transition: all 0.4s ease-in-out; /* Smooth transition */
+        }
+
+        /* Brighten image on hover */
+        .image-container:hover img {
+            filter: brightness(1.2); /* Lighten image on hover */
+        }
+
+        .caption {
+            margin-top: 15px;
+            font-size: 1.2em;
+            text-align: justify;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7); /* Caption background for better readability */
+            border-radius: 10px; /* Rounded corners for caption */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Button container */
+        .button-container {
+            position: absolute;
+            top: 20px;
+            right: 20px; /* Positioning the button at the top-right */
+            z-index: 2;
+        }
+
+        /* Button style */
+        .button {
+            background-color: #ff6600;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Button hover effect */
+        .button:hover {
+            background-color: #e65c00;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <!-- Title at the top -->
+    <h1>Before that, Let me just say somethings first</h1>
+
+    <!-- Content section with scrollable area -->
+    <div class="content">
+        <div class="image-container">
+            <img src="https://media.tenor.com/AP6Hq6uLPuIAAAAi/sorry-bow.gif" alt="Image 1">
+            <div class="caption">I'm sorry. I know there's probably little to no chance for us to get back together, but I still wanted to make this. I'm sorry for saying a lot of hurtful things and for not being able to control my emotions. While that's not an excuse, I hope you know that you are the best thing that ever happened to me. I wasn't able to express what I really wanted to say before because I didn’t even know what kind of answers I was looking for. So I made this simple website to let you know for the last time.</div>
+        </div>
+        <div class="image-container">
+            <img src="https://media.tenor.com/OKEcyToDLPkAAAAM/dog.gif" alt="Image 2">
+            <div class="caption">Doty, you are one of the kindest people I've met and also undeniably the prettiest, despite how much you try to deny or cringe. Honestly, you are the best gaming buddy. I know we fought a lot while playing, but that doesn't change the fact that I was really happy playing with you. There's nothing more I could've ever asked for. I know I said that there are things that I also didn't like about you or our relationship. But that didn't really make you less perfect. We still had a lot to fix, well, more on me, and I'm sorry for making you wait for too long.</div>
+        </div>
+        <div class="image-container">
+            <img src="https://media.tenor.com/0E22Kh7hkEEAAAAM/dog-push-ups.gif" alt="Image 3">
+            <div class="caption">I'm really sorry about the things that I said. I wanted to be understood and asked you why you think so little of what I did for our relationship. It was stupid of me when I didn't even tell you a single thing about how hard it was for me back then, so how would you really understand? I even told you not to let me guess when it comes to this kind of thing, and that's exactly what I did. It affected me to the point that I wasn't even listening to you when it came to things.</div>
+        </div>
+        <div class="image-container">
+            <img src="https://media.tenor.com/_au9z84bveAAAAAi/puppy-love.gif" alt="Image 4">
+            <div class="caption">I want to thank you for everything you did for me, and for all the effort you put into us. I know I didn’t appreciate it enough when we were together, but I see it now. I’ll never forget how much you cared. You really made me a better person.</div>
+        </div>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/600" alt="Image 5">
+            <div class="caption">Image 5 Description</div>
+        </div>
+    </div>
+
+    <!-- Button at the top-right -->
+    <div class="button-container">
+        <a href="thirdpage.html" class="button">Go to Third Page</a>
+    </div>
+
+    <script>
+        // Optional JavaScript functionality can go here
+    </script>
+</body>
+</html>
