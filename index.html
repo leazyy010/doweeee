@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doty Webiste</title>
+    <title>Doty Website</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: 'monospaceT', cursive;
+            font-family: 'monospace', cursive;
         }
 
         /* Full-page background image with animation */
@@ -22,7 +22,7 @@
             align-items: center;
             color: white;
             position: relative;
-            animation: backgroundZoom 15s infinite alternate ease-in-out; /* Background animation */
+            animation: backgroundZoom 15s infinite alternate ease-in-out;
         }
 
         /* Background animation keyframes */
@@ -43,16 +43,16 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance readability */
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .container {
             text-align: center;
             z-index: 1;
             position: relative;
-            display: flex; /* Enable flexbox */
-            flex-direction: column; /* Stack children vertically */
-            align-items: center; /* Center children horizontally */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             animation: fadeIn 2s ease-in-out;
         }
 
@@ -70,9 +70,8 @@
             animation: fadeIn 2s ease-in-out 1s;
         }
 
-        /* Circular button with gradient */
         .btn {
-            background: linear-gradient(135deg, #007bff, #5b9bd5); /* Gradient background */
+            background: linear-gradient(135deg, #007bff, #5b9bd5);
             color: white;
             width: 100px;
             height: 100px;
@@ -85,15 +84,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px; /* Add margin to lower the button */
+            margin-top: 20px;
         }
 
         .btn:hover {
-            background: linear-gradient(135deg, #99b7e9, #007bff); /* Change gradient on hover */
-            transform: scale(1.1); /* Slightly enlarge the button on hover */
+            background: linear-gradient(135deg, #99b7e9, #007bff);
+            transform: scale(1.1);
         }
 
-        /* Center text inside the circular button */
         .btn a {
             text-decoration: none;
             color: white;
@@ -101,10 +99,9 @@
             text-align: center;
             width: 100%;
             height: 100%;
-            line-height: 100px; /* Center text vertically */
+            line-height: 100px;
         }
 
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -123,10 +120,7 @@
     </style>
 </head>
 <body>
-    <!-- Overlay to darken the background image -->
     <div class="overlay"></div>
-    
-    <!-- Centered content -->
     <div class="container">
         <h1>Hi, Doty. Thank you for sharing a little bit of your time!</h1>
         <p>I just wanted to ask you something</p>
