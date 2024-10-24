@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doty Webiste</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'monospaceT', cursive;
+        }
+
+        /* Full-page background image with animation */
+        body {
+            background-image: url(https://townsquare.media/site/442/files/2021/11/attachment-baymax-trailer-1.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            animation: backgroundZoom 15s infinite alternate ease-in-out; /* Background animation */
+        }
+
+        /* Background animation keyframes */
+        @keyframes backgroundZoom {
+            0% {
+                background-size: 100%;
+                background-position: center;
+            }
+            100% {
+                background-size: 110%;
+                background-position: top center;
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance readability */
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            position: relative;
+            display: flex; /* Enable flexbox */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center children horizontally */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #99b7e9;
+            animation: moveUp 1.5s ease-in-out;
+        }
+
+        p {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #7b8daa;
+            animation: fadeIn 2s ease-in-out 1s;
+        }
+
+        /* Circular button with gradient */
+        .btn {
+            background: linear-gradient(135deg, #007bff, #5b9bd5); /* Gradient background */
+            color: white;
+            width: 100px;
+            height: 100px;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            animation: fadeIn 2.5s ease-in-out 1.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px; /* Add margin to lower the button */
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #99b7e9, #007bff); /* Change gradient on hover */
+            transform: scale(1.1); /* Slightly enlarge the button on hover */
+        }
+
+        /* Center text inside the circular button */
+        .btn a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            line-height: 100px; /* Center text vertically */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes moveUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Overlay to darken the background image -->
+    <div class="overlay"></div>
+    
+    <!-- Centered content -->
+    <div class="container">
+        <h1>Hi, Doty. Thank you for sharing a little bit of your time!</h1>
+        <p>I just wanted to ask you something</p>
+        <button class="btn">
+            <a href="secondpage.html">Go</a>
+        </button>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doty Webiste</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'monospaceT', cursive;
+        }
+
+        /* Full-page background image with animation */
+        body {
+            background-image: url(https://townsquare.media/site/442/files/2021/11/attachment-baymax-trailer-1.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            animation: backgroundZoom 15s infinite alternate ease-in-out; /* Background animation */
+        }
+
+        /* Background animation keyframes */
+        @keyframes backgroundZoom {
+            0% {
+                background-size: 100%;
+                background-position: center;
+            }
+            100% {
+                background-size: 110%;
+                background-position: top center;
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance readability */
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            position: relative;
+            display: flex; /* Enable flexbox */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center children horizontally */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #99b7e9;
+            animation: moveUp 1.5s ease-in-out;
+        }
+
+        p {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #7b8daa;
+            animation: fadeIn 2s ease-in-out 1s;
+        }
+
+        /* Circular button with gradient */
+        .btn {
+            background: linear-gradient(135deg, #007bff, #5b9bd5); /* Gradient background */
+            color: white;
+            width: 100px;
+            height: 100px;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            animation: fadeIn 2.5s ease-in-out 1.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px; /* Add margin to lower the button */
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #99b7e9, #007bff); /* Change gradient on hover */
+            transform: scale(1.1); /* Slightly enlarge the button on hover */
+        }
+
+        /* Center text inside the circular button */
+        .btn a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            line-height: 100px; /* Center text vertically */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes moveUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Overlay to darken the background image -->
+    <div class="overlay"></div>
+    
+    <!-- Centered content -->
+    <div class="container">
+        <h1>Hi, Doty. Thank you for sharing a little bit of your time!</h1>
+        <p>I just wanted to ask you something</p>
+        <button class="btn">
+            <a href="secondpage.html">Go</a>
+        </button>
+    </div>
+</body>
+</html>
