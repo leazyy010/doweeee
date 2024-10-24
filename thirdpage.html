@@ -3,199 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History</title>
+    <title>Doty Website</title>
     <style>
-        /* General styling for the body */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'monospace', cursive;
+        }
+
+        /* Full-page background image with animation */
         body {
+            background-image: url(https://townsquare.media/site/442/files/2021/11/attachment-baymax-trailer-1.jpg);
+            background-size: cover;
+            background-position: center;
             display: flex;
-            flex-direction: column; /* Stack title and images vertically */
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full height of the viewport */
-            margin: 0;
-            padding: 20px; /* Adds padding around the content */
-            width: 100%; /* Full width */
-            overflow: hidden; /* Prevent scrolling */
-            position: relative; /* Position the video and overlay */
-            z-index: 1; /* Ensure the content is above the video */
-            color: white; /* Text color for readability */
+            color: white;
+            position: relative;
+            animation: backgroundZoom 15s infinite alternate ease-in-out;
         }
 
-        /* YouTube video background styling */
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Video behind the content */
-            pointer-events: none; /* Disable interaction with the iframe */
+        /* Background animation keyframes */
+        @keyframes backgroundZoom {
+            0% {
+                background-size: 100%;
+                background-position: center;
+            }
+            100% {
+                background-size: 110%;
+                background-position: top center;
+            }
         }
 
-        /* Optional overlay for making text easier to read */
         .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Darken background for contrast */
-            z-index: 0; /* Behind the content, above video */
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
-        /* Styling for the title */
+        .container {
+            text-align: center;
+            z-index: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
         h1 {
             font-size: 3em;
-            font-family: 'Arial', sans-serif;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0;
-            animation: fadeIn 2s ease forwards;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 20px;
+            color: #99b7e9;
+            animation: moveUp 1.5s ease-in-out;
         }
 
-        /* Create a sliding underline animation for the title */
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background-color: #fff;
-            transition: width 0.5s ease, left 0.5s ease;
+        p {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #7b8daa;
+            animation: fadeIn 2s ease-in-out 1s;
         }
 
-        /* Title underline animation on hover */
-        h1:hover::after {
+        .btn {
+            background: linear-gradient(135deg, #007bff, #5b9bd5);
+            color: white;
+            width: 100px;
+            height: 100px;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            animation: fadeIn 2.5s ease-in-out 1.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #99b7e9, #007bff);
+            transform: scale(1.1);
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            text-align: center;
             width: 100%;
-            left: 0;
+            height: 100%;
+            line-height: 100px;
         }
 
-        /* Title fade-in effect */
         @keyframes fadeIn {
-            0% {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes moveUp {
+            from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(30px);
             }
-            100% {
+            to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-
-        /* Container for the images */
-        .image-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 images per row */
-            gap: 30px; /* Increased space between the images */
-            max-width: 1200px; /* Max width for the container */
-            width: 100%; /* Responsive width */
-            z-index: 1; /* Ensure images are above the video and overlay */
-        }
-
-        /* Styling for each image wrapper */
-        .image-wrapper {
-            position: relative; /* Allows positioning of the text */
-            overflow: visible; /* Allows the image to grow beyond the container */
-        }
-
-        /* Styling for each image */
-        .image-wrapper img {
-            width: 300px; /* Increased width */
-            height: 300px; /* Increased height */
-            border-radius: 50%; /* Make the images circular */
-            object-fit: cover;  /* Ensures the image fits within the circular shape */
-            border: 3px solid #fff; /* Optional border around each image */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Optional shadow for a 3D effect */
-            transition: transform 0.5s ease; /* Animation for scaling */
-        }
-
-        /* Scale the image more noticeably on hover */
-        .image-wrapper:hover img {
-            transform: scale(1.3); /* Increase the scaling factor */
-            z-index: 2; /* Bring the image to the front when scaled */
-        }
-
-        /* Hidden text styling */
-        .hidden-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 1.2em;
-            opacity: 0; /* Initially hidden */
-            transform: translate(-50%, -50%) scale(0.8); /* Initial scale down */
-            transition: opacity 0.3s ease, transform 0.5s ease; /* Animation for fading and scaling */
-            max-width: 90%; /* Ensure the text box doesn’t overflow the image */
-            word-wrap: break-word; /* Ensures long words wrap to the next line */
-            text-align: center; /* Center-align the text */
-        }
-
-        /* Show text on hover with animation */
-        .image-wrapper:hover .hidden-text {
-            opacity: 1; /* Reveal the text */
-            transform: translate(-50%, -50%) scale(1); /* Scale back to normal */
-        }
-
-        /* Add a sliding in effect from the top */
-        .image-wrapper:hover .hidden-text {
-            animation: slideIn 0.4s ease forwards;
-        }
-
-        @keyframes slideIn {
-            0% {
-                opacity: 0;
-                transform: translate(-50%, -100%) scale(0.5); /* Start from above */
-            }
-            100% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1); /* End at center and full size */
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- YouTube video background -->
-    <iframe id="video-background" class="video-background" src="historyvid.mp4" allowfullscreen></iframe>
-
-    <!-- Optional overlay for darkening the video -->
     <div class="overlay"></div>
-
-    <!-- Animated title -->
-    <h1>Circle Image Gallery</h1>
-
-    <!-- Image container with hover animation -->
-    <div class="image-container">
-        <div class="image-wrapper">
-            <img src="c1.jpg" alt="Image 1">
-            <span class="hidden-text">Text 1</span>
-        </div>
-        <div class="image-wrapper">
-            <img src="image2.jpg" alt="Image 2">
-            <span class="hidden-text">Longer text without a box around it. This text will remain readable without any interference from the hover effect.</span>
-        </div>
-        <div class="image-wrapper">
-            <img src="image3.jpg" alt="Image 3">
-            <span class="hidden-text">Text 3</span>
-        </div>
-        <div class="image-wrapper">
-            <img src="image4.jpg" alt="Image 4">
-            <span class="hidden-text">Text 4</span>
-        </div>
-        <div class="image-wrapper">
-            <img src="image5.jpg" alt="Image 5">
-            <span class="hidden-text">Text 5</span>
-        </div>
-        <div class="image-wrapper">
-            <img src="c1.jpg" alt="Image 6">
-            <span class="hidden-text">Text 6</span>
-        </div>
+    <div class="container">
+        <h1>Hi, Doty. Thank you for sharing a little bit of your time!</h1>
+        <p>I just wanted to ask you something</p>
+        <button class="btn">
+            <a href="secondpage.html">Go</a>
+        </button>
     </div>
-
 </body>
 </html>
